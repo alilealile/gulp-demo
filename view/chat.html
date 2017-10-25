@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 禁止浏览器缩放 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- 清除浏览器缓存 -->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+	<!--屏幕顶部条的颜色-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<!-- 默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）； -->
+
+	
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<link rel="stylesheet" href="../public/css/chat.css">
+</head>
+<body>
+	<input type="hidden" name="room_id" id="room_id" value="100">
+	<div class="chatbox" id='pagebox'>
+		<!-- 聊天室里的用户 -->
+		<div class="userlist-box">
+			<div>
+				<ul class="userlist" id="userlist">
+					<li class="userlist-item">
+						<img src="{{headimg}}" alt="">
+						<p class="userlist-item-des">
+							<span class="text-base">{{nickname}}</span>
+							<span class="sex-{{sex}}"></span>
+						</p>
+					</li>
+
+				</ul>
+			</div>	
+		</div>
+		
+		<!-- 聊天 内容 -->
+		<div class="chatlist">
+			<!-- <p class="wel-user-join">欢迎XXX加入XX房间</p> -->
+			<ul  class="chatlist-box" id="chatlist">
+				<!-- 时间
+				<li class="chatlist-time">
+					<span class="chatlist-time-text">{{time}}</span>
+				</li>
+				
+				右边  li 加上 chatlist-rt
+				<li class="chatlist-item">
+					<img class="userimg" src="{{userimg}}" alt="">
+					<span class="text">{{text}}</span>话语
+				</li>
+				<li class="chatlist-item">
+					<img class="userimg" src="{{userimg}}" alt="">
+					<img class="sendimg" src="{{sendimg}}" alt="">图片
+				</li>
+				<li class="chatlist-item">
+					<img class="userimg" src="{{userimg}}" alt="">
+					播放声音  把 span.voice 变为 span.voice-play
+					<span class="voice"></span>
+				</li> -->
+			</ul>
+		</div>
+		
+		<!-- 聊天操作 -->
+		<div class="operate">
+			<!-- 操作框 -->
+			<div class="operate-top" id="chat-operate">
+				<!-- <span class="icon">说话</span> -->
+				<input type="text" placeholder="欢迎来小屋！">
+				<div class="operate-img">
+					<span class="icon icon-emoji" data-target="emoji-box"></span>  <!-- 表情-->
+					<span class="icon icon-more" id="moreEmoji" data-target="more-box""></span>
+					<button class="sendMessagebtn" id="sendMessagebtn">发送</button>
+				</div>
+			</div>
+			<!-- 隐藏框 -->
+			<div class="operate-choose" id="choose-operate">
+				<ul class="choose-box" id="more-box">
+					<li class="choose-item" data-target="send-photo">
+						<input type="file"  multiple="multiple" accept="image/*" capture="camera">
+						<span class="more-img more-img-sendpic"></span>
+						<p class="text-base">发图片</p>
+					</li>
+				</ul>
+				<ul class="choose-box choose-box-emoji" id="emoji-box">
+					<li class="choose-item">
+						表情
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="../public/libs/jquery.min.js"></script>
+<script src="../public/js/common.js" ></script>
+<script src="../public/js/index.js" ></script>
+</html>

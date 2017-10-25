@@ -1,0 +1,176 @@
+//左边动画
+@-webkit-keyframes voice-play-lf{
+    0% {background-position: -35px 0;}
+    50% {background-position: -70px 0;}
+    75% {background-position: -0px 0;}
+    100% {background-position: -35px 0;}
+}
+@-webkit-keyframes voice-play-rt{
+    0% {background-position: -140px 0;}
+    50% {background-position: -175px 0;}
+    75% {background-position: -105px 0;}
+    100% {background-position: -140px 0;}
+}
+.chatbox
+	$flex-column()
+	height 667px
+	background-color rgb(245, 245, 245)
+	background url('../img/roombg.png') no-repeat
+	background-size 100%
+
+
+// 聊天 内容 
+.chatlist
+	flex 1
+	padding 10px 15px
+	overflow-y auto
+	height 100% 
+	position relative
+.chatlist-box
+	overflow-y auto
+	height 100%
+		
+//时间
+.chatlist-time
+	text-align center
+	margin-bottom 10px
+.chatlist-time-text
+		background-color #dbdbdb
+		//padding 3px
+		text-align center
+		color #fff
+		border-radius 2px
+
+//说的内容
+.chatlist-item
+	display flex
+	margin-bottom 10px
+	.userimg
+		flex-shrink 0
+		width 40px
+		height 40px
+		//background-color rgba(200,1,0,0.5)
+	span
+	.text
+		background-color #fff
+		//color #fff
+		padding 8px 5px
+		margin 0 15px
+		border-radius 10px
+		position relative
+	.sendimg
+		margin 0 15px
+		width 20%
+		height 100px
+		background-color rgba(200,1,200,0.5)
+	.voice
+	.voice-play
+		width 30%
+		position relative
+		&::after
+			content ''
+			display inline-block
+			position absolute
+			top 5px
+			width 30px
+			height 30px
+			background-size 205px 30px
+	.voice
+		&::after
+			background  url('../img/voice/voiceplay.png') no-repeat 0 0
+	//声音播放动画
+	.voice-play
+		&::after
+			background  url('../img/voice/voiceplay.png') no-repeat -35px 0
+			-webkit-animation-name:voice-play-lf;// 动画名称
+			-webkit-animation-iteration-count: infinite;//动画无限播放 
+			-webkit-animation-timing-function: step-start;//马上跳到动画每一结束桢的状态
+			-webkit-animation-duration: 1200ms;///动画运行的时间
+			
+
+.chatlist-rt
+	flex-direction row-reverse
+	.voice
+		&::after
+			right 5px
+			background-position-x -105px
+	.voice-play
+		&::after
+			right 5px
+			background-position-x -140px
+			-webkit-animation-name: voice-play-rt;// 动画名称
+
+//聊天操作
+.operate
+	$flex-column()
+	padding 10px 15px
+
+//操作框
+.operate-top
+	display flex
+	input
+		flex 1
+		height 35px
+		border-bottom 1px solid $mainColor
+		margin-left 5px
+//发送按钮
+.sendMessagebtn
+	margin-left 5px
+	background-color $mainColor
+	color #fff
+	border-radius 2px
+	display none
+
+
+.operate-img
+	display flex
+	.icon
+		margin-left 5px
+		background-size 35px
+		background-position-y bottom
+	.icon-more
+	    background-image url('../img/chatroom/more.png')
+    .icon-emoji
+	    background-image url('../img/chatroom/emoji.png')
+
+
+//发图片，表情
+.choose-box
+	padding-top 10px
+	display none
+	&:after
+		$clear()
+.choose-item
+	width 25%
+	box-sizing border-box
+	$flex-column()
+	align-items center
+	float left
+	position relative
+	&:nth-child(n+5)
+		margin-top 5px
+	input[type="file"]
+		position absolute
+		width 50px
+		top 0
+		bottom 0
+		opacity 0
+.choose-box-emoji
+	max-height 162px
+	overflow auto
+	.choose-item
+		width ( 100% / 7)
+
+.more-img
+    height 50px
+    width 50px
+    max-width 80%
+    display inline-block
+    border 1px solid #888//#EAEAEA
+    border-radius 10px
+    box-sizing border-box
+    background-size 25px
+    background-repeat no-repeat
+    background-position center
+.more-img-sendpic
+	background-image url('../img/chatroom/sendImg.png')

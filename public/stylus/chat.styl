@@ -1,0 +1,44 @@
+@import "ignore/common.styl"
+
+//聊天室 头像显示
+.userlist-box
+	padding 10px 15px	
+	width calc(100% - 30px)
+	&>div
+		overflow-x auto
+		width 100%
+.userlist
+	display flex
+	//flex-wrap wrap
+.userlist-item
+	width 20%
+	box-sizing border-box
+	$flex-column()
+	align-items center
+	img
+		width 80%
+		//height 50px
+		border 1px solid #fff
+.userlist-item-des
+	width 80%
+	display flex
+	align-items center
+.text-base
+	max-width calc(100% - 16px)
+
+//聊天室欢迎加入的字体
+.wel-user-join
+	position absolute
+	bottom 10px
+	background-color rgba(200,0,0,1)
+	border 1px solid  rgba(200,0,0,0.7)
+	border-radius 5px
+	color #fff
+	padding 2px 10px
+	font-size 12px
+
+
+//聊天室列表
+@import "ignore/chat/chat.main.styl"
+
+

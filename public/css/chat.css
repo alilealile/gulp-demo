@@ -1,0 +1,342 @@
+.js_dialog {
+  display: none;
+}
+.mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+.dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.dialog__hd {
+  padding: 1.3em 1.6em 0.5em;
+  font-size: 18px;
+}
+.dialog__bd {
+  padding: 0 1.6em 0.8em;
+  min-height: 40px;
+  font-size: 15px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #999;
+}
+.dialog__ft {
+  position: relative;
+  display: flex;
+  font-size: 18px;
+  line-height: 48px;
+}
+.dialog__ft:before {
+  height: 1px;
+  right: 0;
+  border-top: 1px solid #d5d5d6;
+  transform: scaleY(0.5);
+}
+.dialog__btn {
+  flex: 1;
+  position: relative;
+  color: #353535;
+}
+.dialog__btn:before {
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #d5d5d6;
+  transform: scaleX(0.5);
+}
+.dialog__btn_primary {
+  color: #6db2f5;
+}
+.dialog__ft:before,
+.dialog__btn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d5d5d6;
+  transform-origin: 0 0;
+}
+.text-base {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+.icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.sex-by,
+.sex-gl {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/chatroom/sex.png") no-repeat 2px 2px;
+  background-size: 29px;
+}
+.sex-by {
+  background-position-x: -14px;
+}
+.userlist-box {
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+}
+.userlist-box>div {
+  overflow-x: auto;
+  width: 100%;
+}
+.userlist {
+  display: flex;
+}
+.userlist-item {
+  width: 20%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userlist-item img {
+  width: 80%;
+  border: 1px solid #fff;
+}
+.userlist-item-des {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.text-base {
+  max-width: calc(100% - 16px);
+}
+.wel-user-join {
+  position: absolute;
+  bottom: 10px;
+  background-color: #c80000;
+  border: 1px solid rgba(200,0,0,0.7);
+  border-radius: 5px;
+  color: #fff;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+@-webkit-keyframes voice-play-lf {
+  0% {
+    background-position: -35px 0;
+  }
+  50% {
+    background-position: -70px 0;
+  }
+  75% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: -35px 0;
+  }
+}
+@-webkit-keyframes voice-play-rt {
+  0% {
+    background-position: -140px 0;
+  }
+  50% {
+    background-position: -175px 0;
+  }
+  75% {
+    background-position: -105px 0;
+  }
+  100% {
+    background-position: -140px 0;
+  }
+}
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  height: 667px;
+  background-color: #f5f5f5;
+  background: url("../img/roombg.png") no-repeat;
+  background-size: 100%;
+}
+.chatlist {
+  flex: 1;
+  padding: 10px 15px;
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+}
+.chatlist-box {
+  overflow-y: auto;
+  height: 100%;
+}
+.chatlist-time {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.chatlist-time-text {
+  background-color: #dbdbdb;
+  text-align: center;
+  color: #fff;
+  border-radius: 2px;
+}
+.chatlist-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.chatlist-item .userimg {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+.chatlist-item span,
+.chatlist-item .text {
+  background-color: #fff;
+  padding: 8px 5px;
+  margin: 0 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.chatlist-item .sendimg {
+  margin: 0 15px;
+  width: 20%;
+  height: 100px;
+  background-color: rgba(200,1,200,0.5);
+}
+.chatlist-item .voice,
+.chatlist-item .voice-play {
+  width: 30%;
+  position: relative;
+}
+.chatlist-item .voice::after,
+.chatlist-item .voice-play::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  background-size: 205px 30px;
+}
+.chatlist-item .voice::after {
+  background: url("../img/voice/voiceplay.png") no-repeat 0 0;
+}
+.chatlist-item .voice-play::after {
+  background: url("../img/voice/voiceplay.png") no-repeat -35px 0;
+  -webkit-animation-name: voice-play-lf;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: step-start;
+  -webkit-animation-duration: 1200ms;
+}
+.chatlist-rt {
+  flex-direction: row-reverse;
+}
+.chatlist-rt .voice::after {
+  right: 5px;
+  background-position-x: -105px;
+}
+.chatlist-rt .voice-play::after {
+  right: 5px;
+  background-position-x: -140px;
+  -webkit-animation-name: voice-play-rt;
+}
+.operate {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+.operate-top {
+  display: flex;
+}
+.operate-top input {
+  flex: 1;
+  height: 35px;
+  border-bottom: 1px solid #6db2f5;
+  margin-left: 5px;
+}
+.sendMessagebtn {
+  margin-left: 5px;
+  background-color: #6db2f5;
+  color: #fff;
+  border-radius: 2px;
+  display: none;
+}
+.operate-img {
+  display: flex;
+}
+.operate-img .icon {
+  margin-left: 5px;
+  background-size: 35px;
+  background-position-y: bottom;
+}
+.operate-img .icon-more {
+  background-image: url("../img/chatroom/more.png");
+}
+.operate-img .icon-emoji {
+  background-image: url("../img/chatroom/emoji.png");
+}
+.choose-box {
+  padding-top: 10px;
+  display: none;
+}
+.choose-box:after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+.choose-item {
+  width: 25%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  position: relative;
+}
+.choose-item:nth-child(n+5) {
+  margin-top: 5px;
+}
+.choose-item input[type="file"] {
+  position: absolute;
+  width: 50px;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.choose-box-emoji {
+  max-height: 162px;
+  overflow: auto;
+}
+.choose-box-emoji .choose-item {
+  width: 14.285714285714286%;
+}
+.more-img {
+  height: 50px;
+  width: 50px;
+  max-width: 80%;
+  display: inline-block;
+  border: 1px solid #888;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.more-img-sendpic {
+  background-image: url("../img/chatroom/sendImg.png");
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 禁止浏览器缩放 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- 清除浏览器缓存 -->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+	<!--屏幕顶部条的颜色-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	
+	<link rel="stylesheet" href="../../public/css/reset.css">
+
+	<link rel="stylesheet" href="../../public/css/form/phonograph.css">
+
+</head>
+<body>
+
+	<div class="form-box">
+		<div class="form-top">
+			<span class="form-top-text">留声机</span>
+		</div>
+		<form  method="post" id="phonographForm">
+			<ul class="form-contain">
+				<li class="label-text">
+					<span class="game-text" id="game-text"> 游戏规则</span>
+				</li>
+				<li class="label-li">
+					<input type="number" required name="phone" placeholder="请输入对方的联系方式！">
+				</li>
+				<li class="label-li">
+					<textarea name="text" placeholder="快说说你想对她说的话吧！" required></textarea>
+					<div class="word-count"><span id="word-count">0/120</span></div>
+				</li>
+			</ul>
+
+			<div class="form-btn">
+				<button type="submit">提交</button>
+			</div>
+		</form>
+	</div>
+	
+	<!-- 弹出框 -->
+
+	<div class="js_dialog">
+		<div class="mask"></div>
+		<div class="dialog">
+			<div class="dialog__hd">留声机*游戏介绍</div>
+			<div class="dialog__bd">内容</div>
+			<div class="dialog__ft">
+				<span class="dialog__btn dialog__btn_primary">确定</span>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+<script src="../../public/libs/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/common.js"></script>
+<script type="text/javascript" src="../../public/js/form/phonograph.js"></script>
+</html>
