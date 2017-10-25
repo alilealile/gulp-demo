@@ -1,4 +1,4 @@
-# 项目模板
+# 项目文件夹
 
 * 开发环境
   - public文件夹
@@ -13,7 +13,7 @@
   - dist 文件夹
   
 
-
+# 项目运行
 * 下载
   - `https://github.com/alilealile/gulp-demo.git`
 
@@ -23,7 +23,6 @@
 * 开发环境
   - 启动
     - `gulp`
-
 
 * 部署环境
   - 更改 app.js
